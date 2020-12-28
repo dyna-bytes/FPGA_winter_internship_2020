@@ -1,1 +1,10 @@
 
+Memory circuits with sequential logics are included.
+
+SR latch (made with two NOR gates)
+D latch (made with two AND gates and a SR latch)
+D flipflop (made with two D latches)
+D flipflop optimized (made by Verilog HDL's synthesizer)
+Enable D flipflop (made with a 2 to 1 MUX and D flipflop)
+Enable D flipflop optimized (made by Verilog HDL's synthesizer. version 1 used ternary operater(non blocking) and version 2 used ifelse logic(blocking))
+Resettable D flipflop of 4 bit bus size (made by Verilog HDL's synthesizer)
