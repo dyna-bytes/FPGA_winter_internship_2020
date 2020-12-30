@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 2020/12/29 18:58:01
+// Create Date: 2020/12/29 18:26:30
 // Design Name: 
-// Module Name: mux
+// Module Name: sregister
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,13 +20,15 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module mux(
-    input [3:0] a,b,
-    input sel,
-    output [3:0] out
+module sregister(
+    input [3:0] sin,
+    input clk, reset,
+    output [3:0] sout,q1,q2,q3
     );
     
-    assign out = sel ? a : b;
-
-
+    ff u_ff3(.clk(clk),.reset(reset),.d(sin),.q(q3));
+    ff u_ff2(.clk(clk),.reset(reset),.d(q3),.q(q2));
+    ff u_ff1(.clk(clk),.reset(reset),.d(q2),.q(q1));
+    ff u_ff0(.clk(clk),.reset(reset),.d(q1),.q(sout));
+    
 endmodule

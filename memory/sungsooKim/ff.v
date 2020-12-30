@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 2020/12/29 18:58:01
+// Create Date: 2020/12/29 17:20:23
 // Design Name: 
-// Module Name: mux
+// Module Name: ff
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,13 +20,16 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module mux(
-    input [3:0] a,b,
-    input sel,
-    output [3:0] out
+module ff(
+    input clk, reset,
+    input d,
+    output reg q
     );
-    
-    assign out = sel ? a : b;
 
-
+    always @(posedge clk, posedge reset) begin
+        if (reset) begin 
+            q <= d;
+        end
+        else q <= 0;
+    end
 endmodule

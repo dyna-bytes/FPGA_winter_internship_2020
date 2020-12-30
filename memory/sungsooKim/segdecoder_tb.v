@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 2020/12/29 18:58:01
+// Create Date: 2020/12/27 12:22:10
 // Design Name: 
-// Module Name: mux
+// Module Name: segdecoder_tb
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,13 +20,21 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module mux(
-    input [3:0] a,b,
-    input sel,
-    output [3:0] out
-    );
+module segdecoder_tb();
+    reg [3:0] data;
+    wire [6:0] seg;
+
+    segdecoder u_sd(data,seg);
+
+    initial begin
+        data = 4'b0000;
+        #100 $stop;
+    end
     
-    assign out = sel ? a : b;
-
-
+    always begin    
+       if( data <= 4'b1111 )
+        #4 data  =data + 4'b0001;
+       else
+        #4 data  = 4'b0000;     
+    end 
 endmodule

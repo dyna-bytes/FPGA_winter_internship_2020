@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 2020/12/29 18:58:01
+// Create Date: 2020/12/29 15:29:57
 // Design Name: 
-// Module Name: mux
+// Module Name: twobitupbb
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,13 +20,15 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module mux(
-    input [3:0] a,b,
-    input sel,
-    output [3:0] out
+module twobitupbb(
+    clk, reset,c
     );
+    parameter N = 2;
+    input clk, reset;
+    output reg [N-1:0] c;
     
-    assign out = sel ? a : b;
-
-
+    always @(posedge clk, posedge reset) begin
+        if (reset) c <= 0; 
+        else c <= c+1'b1;
+    end
 endmodule

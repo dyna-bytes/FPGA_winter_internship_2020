@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 2020/12/29 18:58:01
+// Create Date: 2020/12/29 15:25:43
 // Design Name: 
-// Module Name: mux
+// Module Name: twobitupb_tb
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,13 +20,20 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module mux(
-    input [3:0] a,b,
-    input sel,
-    output [3:0] out
-    );
+module twobitupb_tb();
+    reg clk, reset;
+    wire [1:0] c;
     
-    assign out = sel ? a : b;
+    twobitupb u_tbub(.clk(clk),.reset(reset),.c(c));
 
-
+    parameter clk_period = 10;
+    
+    always begin
+        clk = 1;
+        forever #(clk_period/2) clk = ~clk;
+    end
+    always begin
+        reset = 1;
+        forever #(clk_period*4) reset = ~reset;
+    end
 endmodule
