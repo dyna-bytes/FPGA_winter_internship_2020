@@ -24,12 +24,12 @@ module top(
     input clk, reset,
     input start, stop,
     
-   // output [3:0] d, e, f, g, h, i,
+   //output [3:0] d, e, f, g, h, i,
     output [7:0] seg,
     output [5:0] seg_sel
     );
     
-   wire d, e, f, g, h, i;
+   wire [3:0] d, e, f, g, h, i;
 stopwatch_top    stopwatch_top(.clk(clk), .reset(reset), .start(start), .stop(stop),     .d(d),.e(e),.f(f),.g(g),.h(h),.i(i));
 seg_controller   seg_controller(.clk(clk), .reset(reset),.d(d),.e(e),.f(f),.g(g),.h(h),.i(i),      .seg(seg), .seg_sel(seg_sel));
 

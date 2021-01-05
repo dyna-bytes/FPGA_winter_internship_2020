@@ -31,15 +31,15 @@ module sec_counter(
     parameter T2 = 2'b10;   //sec_counter.v pauses      
     
     parameter sec = 19'd499_999;
-    parameter adjustment_factor_for_tb = 400_000;
+    parameter adjustment_factor_for_tb = 1;//400_000;
     
-    always @ (posedge clk or posedge reset)
-        if(reset || (sec_count >= sec/adjustment_factor_for_tb)) sec_count <= 0; //sec_count >= sec 라고 쓰면 d에 0이 출력되는 시간이 짧아짐. why?
+    always @ (posedge clk or negedge reset)
+        if(!reset || (sec_count >= sec/adjustment_factor_for_tb)) sec_count <= 0; //sec_count >= sec 라고 쓰면 d에 0이 출력되는 시간이 짧아짐. why?
         else 
             case(en)
                 T0 : sec_count <= 0;
                 T1 : sec_count <= sec_count + 1'b1;
-                T2 : sec_count <= sec_count;
+                T2 : ;//sec_count <= sec_count;
                 default : sec_count <= 0;
             endcase
     

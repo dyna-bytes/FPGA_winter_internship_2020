@@ -25,18 +25,18 @@ module stopwatch_tb();
 reg clk, reset;
 reg start, stop;
 
-wire [3:0] d, e, f, g, h, i;
+//wire [3:0] d, e, f, g, h, i;
 wire [7:0] seg;
 wire [5:0] seg_sel;
 
-top top(clk, reset, start, stop,    d, e, f, g, h, i, seg,seg_sel);
+top top(.clk(clk), .reset(reset), .start(start), .stop(stop),    .seg(seg),.seg_sel(seg_sel));
 
 parameter clk_period = 10;
 
 initial begin
-    reset = 0;
-    #13 reset = 1;
-    #(clk_period) reset = 0;
+    reset = 1;
+    #13 reset = 0;
+    #(clk_period) reset = 1;
 end
 
 always begin
@@ -47,7 +47,7 @@ end
 initial begin
     start = 0; stop = 0;
     #(clk_period*3) start = 1;
-    #(clk_period) start = 0;
+    #(clk_period*3) start = 0;
       //  #300 $stop;
 //    #750 stop = 1;
 //    #(clk_period) stop = 0;

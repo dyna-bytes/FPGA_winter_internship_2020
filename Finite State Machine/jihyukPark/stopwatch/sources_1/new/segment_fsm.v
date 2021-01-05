@@ -36,12 +36,12 @@ parameter S3 = 3'b011;
 parameter S4 = 3'b100;
 parameter S5 = 3'b101;
 
-parameter adjustment_factor_for_tb = 64;
+parameter adjustment_factor_for_tb = 1;
 parameter trg = 10'b11_1111_1111/adjustment_factor_for_tb; //trigger
 
 //status register
-always @(posedge clk or posedge reset)
-    if(reset) state <= S0;
+always @(posedge clk or negedge reset)
+    if(!reset) state <= S0;
     else state <= next_state;
     
 //next state logic
@@ -57,7 +57,7 @@ always @(state or count) begin
 end
 
 //output logic
-always @(state) begin
+always @(state , d, e, f, g, h, i) begin
     seg_sel <= 6'b10_0000 / (2 ** state);
     case(state)
         S0 : data = d;
