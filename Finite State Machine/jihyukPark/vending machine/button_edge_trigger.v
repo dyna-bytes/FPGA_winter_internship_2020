@@ -29,27 +29,27 @@ module button_edge_trigger #(
     );
    
 // Button Noise Fillter
-reg [filter_width : 0] shifter;
+reg [filter_width-1 : 0] shifter;
 reg filtered;
-wire [filter_width : filter_width/2] TRUE;                    // filter_width>>1 == filter_width/2
-assign TRUE = { (filter_width - filter_width/2 + 1) {1'b1} }; // All bits are filled with 1s.
+    wire [filter_width/2 - 1 : 0] TRUE;                    // filter_width>>1 == filter_width/2
+assign TRUE = { (filter_width/2) {1'b1} }; // All bits are filled with 1s.
 
 always @ (posedge clk) begin
     case({pos_edge, neg_edge})
         // neg_edge trigger
-        01 : if ((shifter[filter_width : filter_width/2] == TRUE) && (shifter[filter_width/2 - 1 : 0] == 0))  
+        2'b01 : if ((shifter[filter_width-1 : filter_width/2] == TRUE) && (shifter[filter_width/2 - 1 : 0] == 0))  
                  filtered <= 1;                                                                               
              else                                                                                             
                  filtered <= 0;     
        
         // pos_edge trigger
-        10 : if ((shifter[filter_width : filter_width/2] == 0) && (shifter[filter_width/2 - 1 : 0] == TRUE))  
+        2'b10 : if ((shifter[filter_width-1 : filter_width/2] == 0) && (shifter[filter_width/2 - 1 : 0] == TRUE))  
                  filtered <= 1;                                                                               
              else                                                                                             
                  filtered <= 0;            
         
         // both edges                                                                 
-        11 : if ((shifter[filter_width : filter_width*3/4] == TRUE) && (shifter[filter_width*3/4 - 1 : filter_width/4] == 0) && (shifter[filter_width/4 - 1 : 0] == TRUE))  
+        2'b11 : if ((shifter[filter_width-1 : filter_width*3/4] == TRUE>>1) && (shifter[filter_width*3/4 - 1 : filter_width/4] == 0) && (shifter[filter_width/4 - 1 : 0] == TRUE>>1))  
                  filtered <= 1;                                                                                                                                             
              else                                                                                                                                                           
                  filtered <= 0;   
@@ -57,7 +57,7 @@ always @ (posedge clk) begin
     endcase
         
     // right shifting the register 'shifter'
-    shifter <= { shifter[filter_width-1 : 0], button };
+    shifter <= { shifter[filter_width-2 : 0], button };
 end        
 
 assign out = filtered;    
