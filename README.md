@@ -1,11 +1,12 @@
 # FPGA_winter_internship_2020
 FPGA 동계 인턴쉽 원은일 교수님
 
-Week 1~2
+Week 1~2 :
 Verilog HDL의 기초적인 내용을 학습합니다.
 
-Week 3
+Week 3 :
 VHDL의 기초적인 내용을 학습합니다.
+CMB ctrl VHDL 코드의 VHDL to Verilog HDL로의 converting project[본 프로젝트]를 시작합니다.
 
 
 
