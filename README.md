@@ -81,3 +81,37 @@ CMB ctrl VHDL 코드의 VHDL to Verilog HDL로의 converting project[본 프로�
 - 버튼 엣지 트리거 모듈 베릴로그 코드 구현
 - 스톱워치의 FPGA 보드 매핑(정상작동 확인)
 - VHDL 기본 개념 스터디 시작
+
+-----------------------------------------------------------
+1/7(목)
+- VHDL 프로그래밍의 기본 구조, 기본 문법 및 데이터형 공부
+- 블로그 https://m.blog.naver.com/PostList.nhn?blogId=ansdbtls4067&categoryNo=40&logCode=0 를 가이드로 참고함
+
+-----------------------------------------------------------
+1/8(금)
+- VHDL 기본 프로그래밍 학습 마무리
+- Mux & Demux
+- Encoder & Decoder
+- Half Adder & Full Adder
+- RS, D, JK, T Flip-Flop
+- FSM(Moore & Mealy Machine)
+- 8 bit up-down counter, 동기/비동기 카운터, 활성/비활성 카운터, 동기/비동기 10진 카운터, 분주회로 VHDL 코드 설계 및 테스트벤치 구현
+
+-----------------------------------------------------------
+1/11(월)
+- CMB ctrl 중 카운터 부분을 모듈화하여 VHDL로 재설계함
+- package, function, generic 등의 VHDL 문법을 활용하여 코드 간소화
+
+-----------------------------------------------------------
+1/12(화)
+- CMB ctrl 중 FSM 부분을 모듈화하여 VHDL로 재설계함
+
+-----------------------------------------------------------
+1/13(수)
+- CMB ctrl 중 Increment angle counter for 7-segment display, 7-segment display output by multiplexing, 8 LED counter from 1Hz signal 부분을 모듈화하여 VHDL로 재설계함
+
+-----------------------------------------------------------
+1/14(목)
+- CMB ctrl의 모듈화를 통합하고
+- CMB ctrl 테스트벤치 결과 확인함
+- 통합 시 나타난 일부 에러 수정
