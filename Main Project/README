@@ -1,1 +1,2 @@
-
+기존의 CMB ctrl.vhd 코드를 VHDL로 refactoring 하고, VHDL to Verilog로 converting 하는 프로젝트를 수행하였습니다.
+원본 코드의 소유권은 [고려대학교 소립자물리연구실 Sorim 425]에 있습니다.
