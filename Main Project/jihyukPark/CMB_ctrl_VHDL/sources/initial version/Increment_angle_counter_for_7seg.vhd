@@ -46,7 +46,7 @@ architecture Behavioral of Increment_angle_counter_for_7seg is
     type dig is array(3 downto 0) of std_logic_vector(3 downto 0);
     signal digit : dig;
 begin 
-    -- rot_clkÀ» 10Áø¼ö·Î count up ÇÑ´Ù.
+    -- rot_clkÃ€Â» 10ÃÃ¸Â¼Ã¶Â·Ã count up Ã‡Ã‘Â´Ã™.
     counting : process(sys_init_ctrl, rot_clk, rot_en)
     begin
         if sys_init_ctrl = '1' then
