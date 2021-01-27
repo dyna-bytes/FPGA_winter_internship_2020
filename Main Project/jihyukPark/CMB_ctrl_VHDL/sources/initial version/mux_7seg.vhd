@@ -51,7 +51,7 @@ architecture Behavioral of mux_7seg is
     signal bcd_char : std_logic_vector(3 downto 0);
     signal seg_dp : std_logic;
     
-begin    -- ÀúÀåµÈ bcd_int¸¦ 1KHz clk¿¡ ¸ÂÃç ¼¼±×¸ÕÆ®¿¡ µğ½ºÇÃ·¹ÀÌÇÑ´Ù.
+begin    -- ì €ì¥ëœ bcd_intë¥¼ 1KHz clkì— ë§ì¶° ì„¸ê·¸ë¨¼íŠ¸ì— ë””ìŠ¤í”Œë ˆì´í•œë‹¤.
    
     digit_out <= digit;
     seg_out <= seg;
@@ -72,7 +72,7 @@ begin    -- ÀúÀåµÈ bcd_int¸¦ 1KHz clk¿¡ ¸ÂÃç ¼¼±×¸ÕÆ®¿¡ µğ½ºÇÃ·¹ÀÌÇÑ´Ù.
         end if;
       
         -- digit_selection 
-        dig_sel <= TO_INTEGER(unsigned(digit_select));   -- Çü º¯È¯
+        dig_sel <= TO_INTEGER(unsigned(digit_select));   -- í˜• ë³€í™˜
         bcd_char <= bcd_int( ((dig_sel*4) + 3) downto (dig_sel*4) );
     
         case dig_sel is
