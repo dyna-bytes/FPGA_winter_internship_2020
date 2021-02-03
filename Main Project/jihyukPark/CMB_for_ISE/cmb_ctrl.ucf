@@ -1,0 +1,66 @@
+NET clk50_in					period = 50MHz;
+
+NET "clk50_in"					LOC = "T9";
+
+NET "digit_out<0>"			LOC = "E13";
+NET "digit_out<1>"			LOC = "D14";
+NET "digit_out<2>"			LOC = "G14";
+NET "digit_out<3>"			LOC = "F14";
+
+NET "seg_out<0>"				LOC = "P16";
+NET "seg_out<1>"				LOC = "N16";
+NET "seg_out<2>"				LOC = "F13";
+NET "seg_out<3>"				LOC = "R16";
+NET "seg_out<4>"				LOC = "P15";
+NET "seg_out<5>"				LOC = "N15";
+NET "seg_out<6>"				LOC = "G13";
+NET "seg_out<7>"				LOC = "E14";
+
+NET "led_out<0>"				LOC = "K12";
+NET "led_out<1>"				LOC = "P14";
+NET "led_out<2>"				LOC = "L12";
+NET "led_out<3>"				LOC = "N14";
+NET "led_out<4>"				LOC = "P13";
+NET "led_out<5>"				LOC = "N12";
+NET "led_out<6>"				LOC = "P12";
+NET "led_out<7>"				LOC = "P11";
+
+NET "pb_in<0>"					LOC = "M13";
+NET "pb_in<1>"					LOC = "M14";
+NET "pb_in<2>"					LOC = "L13";
+NET "pb_in<3>"					LOC = "L14";
+
+NET "sw_in<0>"					LOC = "F12";
+NET "sw_in<1>"					LOC = "G12";
+NET "sw_in<2>"					LOC = "H14";
+NET "sw_in<3>"					LOC = "H13";
+NET "sw_in<4>"					LOC = "J14";
+NET "sw_in<5>"					LOC = "J13";
+NET "sw_in<6>"					LOC = "K14";
+NET "sw_in<7>"					LOC = "K13";
+
+#USER DEFINE PIN FOR EXTERNAL
+
+NET "rf_sw_out<0>"			LOC = "C9";
+NET "rf_sw_out<1>"			LOC = "D10";
+NET "rf_sw_out<2>"			LOC = "A3";
+NET "rf_sw_out<3>"			LOC = "B4";
+
+NET "rot_count_out<0>"		LOC = "E6";
+NET "rot_count_out<1>"		LOC = "D5";
+NET "rot_count_out<2>"		LOC = "C5";
+NET "rot_count_out<3>"		LOC = "D6";
+NET "rot_count_out<4>"		LOC = "C6";
+NET "rot_count_out<5>"		LOC = "E7";
+NET "rot_count_out<6>"		LOC = "C7";
+NET "rot_count_out<7>"		LOC = "D7";
+NET "rot_count_out<8>"		LOC = "C8";
+NET "rot_count_out<9>"		LOC = "D8";
+
+NET "debug_out"				LOC = "A4";
+
+NET "rot_clk_out"				LOC = "B5";
+
+NET "stp_clk_out"				LOC = "A5";
+
+NET "adc_trg_out"				LOC = "B6";
