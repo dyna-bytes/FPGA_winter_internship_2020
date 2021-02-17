@@ -148,5 +148,5 @@ CMB ctrl VHDL 코드의 [VHDL to Verilog HDL로의 converting project]를 시작
 1/27(수)
 - CMB_ctrl의 VHDL 리펙토링 코드를 실제 보드에 업로드하여 테스트함(Spartan 3 : xc3s1000)
 - sskim's code : 세그먼트 숫자가 0.1씩 작게 출력되는 문제가 발생. 아마 [increment_angle_counter_for_7seg] 모듈의 문제로 예상됨.
-- jhpark's code : 정상 작동 확인. 그러나 버튼의 입력이 무시되는 문제가 간혹 발생.
+- jhpark's code : 정상 작동 확인. 
 
